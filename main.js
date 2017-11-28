@@ -13,9 +13,9 @@ function processData(data, tabletop) {
 
     $('table').append('\
       <tr> \
-        <td>' + data[i]['What is your name?'] + '</td>\
-        <td>' + data[i]['What is your affiliation?'] + '</td> \
-        <td>' + data[i]['In 5 words or less, tell us what interests you in Hartford'] + '</td>\
+        <td>' + data[i]['Name'] + '</td>\
+        <td>' + data[i]['Email'] + '</td> \
+        <td>' + data[i]['Research'] + '</td>\
       </tr> \
     ');
   }
