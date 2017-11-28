@@ -9,5 +9,5 @@ Display Google Forms data on web page with Tabletop.js
 Created by Ilya Ilyankou (@ilyankou) for Liberal Arts Action Lab, Hartford CT
 
 ## Dependencies
-Tabletop v1.5.2, https://github.com/jsoma/tabletop
-jQuery v3.2.1, https://jquery.com/
+- Tabletop v1.5.2, https://github.com/jsoma/tabletop
+- jQuery v3.2.1, https://jquery.com/
