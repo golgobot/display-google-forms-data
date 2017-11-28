@@ -1,5 +1,5 @@
 # display-google-forms-data
-Display Google Forms data on web page
+Display Google Forms data on web page with Tabletop.js
 
 ## Requirements
 - Google Form responses must appear in Google Sheets, which must be published. Insert URLs in main.js
