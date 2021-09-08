@@ -1,23 +1,25 @@
-var generalURL = 'https://docs.google.com/spreadsheets/d/1p8r5qRrLbDJp1tmBXvZow9ygzn2EVv3f_m0lgONC1HE/pubhtml';
+var generalURL = 'https://docs.google.com/spreadsheets/d/1p8r5qRrLbDJp1tmBXvZow9ygzn2EVv3f_m0lgONC1HE/pub?output=csv';
 
-Tabletop.init({
-  key: generalURL,
-  callback: processData,
-  simpleSheet: true,
-});
+function processData(results) {
+    for (data of results.data) {
+        if (data.Display !== 'y') continue;
 
-function processData(data, tabletop) {
-
-  for (i in data) {
-    if (data[i].Display !== 'y') continue;
-
-    $('table').append('\
+        $('table').append('\
       <tr> \
-        <td>' + data[i]['Name'] + '</td>\
-        <td>' + data[i]['Email'] + '</td> \
-        <td>' + data[i]['Research'] + '</td>\
+        <td>' + data['Name'] + '</td>\
+        <td>' + data['Email'] + '</td> \
+        <td>' + data['Research'] + '</td>\
       </tr> \
     ');
-  }
-
+    }
 }
+
+function init() {
+    Papa.parse(generalURL, {
+        download: true,
+        header: true,
+        complete: processData
+    });
+}
+
+window.addEventListener('DOMContentLoaded', init);
